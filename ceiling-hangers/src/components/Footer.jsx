@@ -26,7 +26,7 @@ function Footer() {
           </p>
           <p>
             <i className="fas fa-envelope"></i> {/* Font Awesome icon for email */}
-            <a href="mailto:info@ndceilinghangers.com">info@ndceilinghangers.com</a>
+            <a href="mailto:ndceilinghangers@gmail.com">ndceilinghangers@gmail.com</a>
           </p>
         </div>
 
