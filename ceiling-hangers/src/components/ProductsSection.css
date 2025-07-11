@@ -1,0 +1,184 @@
+.products-section {
+  padding: 80px 40px;
+  background-color: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.products-header {
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.products-tag {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #ff6e40;
+  border-radius: 30px;
+  color: #ff6e40;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.products-carousel {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Centers cards horizontally within the available space */
+  gap: 30px; /* This creates consistent space BETWEEN items, both horizontally and vertically */
+  overflow-x: hidden; /* Ensure no horizontal scrolling */
+  width: 100%;
+}
+
+/* Hide scrollbar for Webkit browsers */
+.products-carousel::-webkit-scrollbar {
+  display: none;
+}
+.products-carousel {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.product-card {
+  flex-grow: 1;
+  flex-shrink: 1;
+  /* Default for large screens: 3 columns */
+  flex-basis: calc(33.333% - 20px); /* (100% / 3) - (2 * gap / 3) = 33.333% - 20px */
+  max-width: calc(33.333% - 20px);
+
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-description {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.product-buttons {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.product-call-btn,
+.product-whatsapp-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.product-call-btn {
+  background-color: #ff6e40;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(255, 110, 64, 0.2);
+}
+
+.product-call-btn:hover {
+  background-color: #e65c32;
+  transform: translateY(-1px);
+}
+
+.product-whatsapp-btn {
+  background-color: #25d366;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(37, 211, 102, 0.2);
+}
+
+.product-whatsapp-btn:hover {
+  background-color: #1da851;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .products-section {
+    padding: 80px 30px; /* Adjusted padding for this breakpoint */
+  }
+  .product-card {
+    /* For 2 columns on medium screens */
+    flex-basis: calc(50% - 15px); /* (100% / 2) - (1 * gap / 2) = 50% - 15px */
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 60px 20px;
+  }
+  .product-card {
+    /* For 1 column on small screens */
+    flex-basis: 100%;
+    max-width: 400px; /* Optional: constrain single card width on larger mobile screens */
+  }
+  .product-title {
+    font-size: 20px; /* Scale down title */
+  }
+  .product-description {
+    font-size: 14px; /* Scale down description */
+  }
+  .product-call-btn,
+  .product-whatsapp-btn {
+    font-size: 14px; /* Scale down button font */
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-section {
+    padding: 40px 15px;
+  }
+  .products-tag {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+}

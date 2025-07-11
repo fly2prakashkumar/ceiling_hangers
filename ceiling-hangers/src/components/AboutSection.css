@@ -1,0 +1,129 @@
+.about-section {
+  display: flex;
+  flex-direction: row; /* Default for desktop: image left, text right */
+  align-items: center;
+  padding: 80px 40px; /* Consistent padding */
+  background-color: #fff;
+  gap: 60px; /* Space between image and text */
+  flex-wrap: wrap; /* Allow image and content to wrap */
+  justify-content: center; /* Center content when wrapped */
+}
+
+.about-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  min-width: 300px; /* Ensure image container doesn't get too small */
+  max-width: 500px; /* Limit max width for image container on large screens */
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px; /* Ensure content doesn't get too small */
+  max-width: 600px; /* Limit max width for content on large screens */
+}
+
+.about-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.highlight-text-about {
+  color: #ff6e40;
+}
+
+.about-text-scrollable {
+  max-height: 300px; /* Set a max height for the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  padding-right: 15px; /* Add padding for scrollbar if present */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6e40 #f1f1f1;
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+.about-text-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-text-scrollable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.about-text-scrollable::-webkit-scrollbar-thumb {
+  background-color: #ff6e40;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+.about-text-scrollable p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column; /* Stack image and text vertically */
+    padding: 60px 30px;
+    gap: 40px;
+  }
+
+  .about-image-container,
+  .about-content {
+    max-width: 100%; /* Take full width when stacked */
+    min-width: unset; /* Remove min-width to allow shrinking */
+  }
+
+  .about-heading {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 50px 20px;
+  }
+  .about-heading {
+    font-size: 30px; /* Scale down heading */
+  }
+  .about-text-scrollable {
+    max-height: 250px; /* Adjust max-height for smaller screens */
+  }
+  .about-text-scrollable p {
+    font-size: 15px; /* Scale down paragraph */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+  .about-heading {
+    font-size: 24px; /* Smallest heading font */
+  }
+  .about-text-scrollable {
+    max-height: 200px; /* Further adjust max-height for very small screens */
+  }
+  .about-text-scrollable p {
+    font-size: 14px; /* Smallest paragraph font */
+  }
+}

@@ -1,0 +1,95 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-nd {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff6e40, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.logo-text {
+  font-size: 14px;
+  color: #ff6e40;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #ff6e40;
+}
+
+/* Responsive adjustments for Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start; /* Keep logo left-aligned */
+    padding: 15px 20px; /* Reduced padding for smaller screens */
+  }
+
+  .nav {
+    width: 100%; /* Ensure nav takes full width */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%;
+    margin-top: 15px;
+    align-items: flex-start; /* Align nav items to the left */
+  }
+
+  .nav li {
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 10px; /* Add vertical spacing */
+  }
+
+  .nav a {
+    font-size: 16px; /* Slightly smaller font for mobile nav links */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px; /* Even smaller padding for very small screens */
+  }
+  .logo-nd {
+    font-size: 28px; /* Scale down logo font */
+  }
+  .logo-text {
+    font-size: 12px; /* Scale down tagline font */
+  }
+}
