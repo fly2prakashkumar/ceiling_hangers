@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "target": "nd-ceiling-hangers",
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "https://www.ndceilinghangers.com",
+        "type": 301
+      }
+    ]
+  }
+}
